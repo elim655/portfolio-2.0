@@ -7,6 +7,14 @@ const Nav = styled.nav`
   display: flex;
   align-items: center;
   padding: 0 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 1rem;
+  }
 `;
 
 const NavLogo = styled(Link)`
@@ -16,10 +24,21 @@ const NavLogo = styled(Link)`
   align-items: center;
   margin-right: auto;
   text-decoration: none;
+
+  @media (max-width: 768px) {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
 `;
 
 const NavMenu = styled.div`
   display: flex;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
 `;
 
 const NavLink = styled(Link)`
@@ -31,14 +50,18 @@ const NavLink = styled(Link)`
   &:hover {
     color: #00ffea;
   }
+
+  @media (max-width: 768px) {
+    margin-left: 0;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
 `;
 
 function Navbar() {
   return (
     <Nav>
-      <NavLogo to="/portfolio-2.0">
-        Edmund Lim
-      </NavLogo>
+      <NavLogo to="/portfolio-2.0">Edmund Lim</NavLogo>
       <NavMenu>
         <NavLink to="/about">About Me</NavLink>
         <NavLink to="/experience">Experience</NavLink>
