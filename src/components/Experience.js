@@ -15,23 +15,25 @@ const ExperienceContent = styled.div`
 `;
 
 const Job = styled.div`
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 `;
 
 const JobTitle = styled.h3`
   color: #00ffea;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
+  margin-bottom: 0.75rem;
 `;
 
 const JobDetails = styled.p`
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
 `;
 
 const JobDescription = styled.ul`
   list-style-type: disc;
   margin-left: 1.5rem;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
 `;
 
 function Experience() {
@@ -39,11 +41,11 @@ function Experience() {
 
   return (
     <ExperienceSection id="experience" ref={ref}>
-      <ExperienceContent 
-      as={motion.div}
-      initial={{ opacity: 0, y: 50 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6 }}
+      <ExperienceContent
+        as={motion.div}
+        initial={{ opacity: 0, y: 50 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6 }}
       >
         <Job>
           <JobTitle>Full Stack Developer</JobTitle>

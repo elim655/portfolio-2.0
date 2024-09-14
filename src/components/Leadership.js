@@ -16,17 +16,18 @@ const LeadershipContent = styled.div`
 
 const Heading = styled.h2`
   color: #00ffea;
-  margin-bottom: 1rem;
-  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-size: 2.2rem;
 `;
 
 const ActivityList = styled.ul`
   list-style-type: none;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  line-height: 1.6;
 `;
 
 const ActivityItem = styled.li`
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 `;
 
 function Leadership() {
@@ -35,10 +36,10 @@ function Leadership() {
   return (
     <LeadershipSection ref={ref}>
       <LeadershipContent
-      as={motion.div}
-      initial={{ opacity: 0, y: 50 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6 }}
+        as={motion.div}
+        initial={{ opacity: 0, y: 50 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6 }}
       >
         <Heading>Leadership & Activities</Heading>
         <ActivityList>

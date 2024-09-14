@@ -16,18 +16,20 @@ const SkillsContent = styled.div`
 
 const Heading = styled.h2`
   color: #00ffea;
-  margin-bottom: 1rem;
-  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-size: 2.2rem;
 `;
 
 const SkillList = styled.ul`
   list-style-type: none;
   columns: 2;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  column-gap: 2rem;
 `;
 
 const SkillItem = styled.li`
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 `;
 
 function Skills() {
@@ -36,10 +38,10 @@ function Skills() {
   return (
     <SkillsSection id="skills" ref={ref}>
       <SkillsContent
-      as={motion.div}
-      initial={{ opacity: 0, y: 50 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6 }}
+        as={motion.div}
+        initial={{ opacity: 0, y: 50 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6 }}
       >
         <Heading>Skills & Interests</Heading>
         <SkillList>

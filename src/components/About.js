@@ -7,6 +7,10 @@ const AboutSection = styled.section`
   padding: 4rem 2rem;
   background: #0d0d0d;
   color: #fff;
+
+  @media (max-width: 768px) {
+    padding: 3rem 1.5rem;
+  }
 `;
 
 const AboutContent = styled.div`
@@ -16,13 +20,25 @@ const AboutContent = styled.div`
 
 const Heading = styled.h2`
   color: #00ffea;
-  margin-bottom: 1rem;
-  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+  letter-spacing: 0.05rem; 
+  
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
 `;
 
 const Paragraph = styled.p`
-  line-height: 1.6;
-  font-size: 1.1rem;
+  line-height: 1.8;
+  font-size: 1.2rem; 
+  margin-bottom: 1.5rem; 
+  letter-spacing: 0.03rem;
+  
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
 `;
 
 function About() {
