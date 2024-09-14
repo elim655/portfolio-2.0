@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { Container, Row, Col, ListGroup } from 'react-bootstrap';
 import { useInView } from 'react-intersection-observer';
 
 const LeadershipSection = styled.section`
@@ -9,25 +10,21 @@ const LeadershipSection = styled.section`
   color: #fff;
 `;
 
-const LeadershipContent = styled.div`
-  max-width: 800px;
-  margin: 0 auto;
-`;
-
 const Heading = styled.h2`
   color: #00ffea;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   font-size: 2.2rem;
+  text-align: center;
 `;
 
-const ActivityList = styled.ul`
-  list-style-type: none;
+const ActivityItem = styled(ListGroup.Item)`
+  background: #1a1a1a;
+  border: none;
+  color: #fff;
   font-size: 1.2rem;
   line-height: 1.6;
-`;
-
-const ActivityItem = styled.li`
   margin-bottom: 1rem;
+  padding: 1rem;
 `;
 
 function Leadership() {
@@ -35,28 +32,27 @@ function Leadership() {
 
   return (
     <LeadershipSection ref={ref}>
-      <LeadershipContent
-        as={motion.div}
-        initial={{ opacity: 0, y: 50 }}
-        animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6 }}
-      >
-        <Heading>Leadership & Activities</Heading>
-        <ActivityList>
-          <ActivityItem>
-            Tau Beta Pi (Engineering Honor Society) &mdash; Aug 2023 - Present
-          </ActivityItem>
-          <ActivityItem>
-            CS & Software Engineering Club &mdash; Aug 2022 - Present
-          </ActivityItem>
-          <ActivityItem>
-            Guang Hua Lion Dance Club &mdash; Aug 2022 - Present
-          </ActivityItem>
-          <ActivityItem>
-            Cheerleading Spirit Squad ISU &mdash; Aug 2022 - May 2023
-          </ActivityItem>
-        </ActivityList>
-      </LeadershipContent>
+      <Container as={motion.div} initial={{ opacity: 0, y: 50 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}>
+        <Row className="justify-content-center">
+          <Col md={10} lg={8}>
+            <Heading>Leadership & Activities</Heading>
+            <ListGroup variant="flush">
+              <ActivityItem>
+                Tau Beta Pi (Engineering Honor Society) &mdash; Aug 2023 - Present
+              </ActivityItem>
+              <ActivityItem>
+                CS & Software Engineering Club &mdash; Aug 2022 - Present
+              </ActivityItem>
+              <ActivityItem>
+                Guang Hua Lion Dance Club &mdash; Aug 2022 - Present
+              </ActivityItem>
+              <ActivityItem>
+                Cheerleading Spirit Squad ISU &mdash; Aug 2022 - May 2023
+              </ActivityItem>
+            </ListGroup>
+          </Col>
+        </Row>
+      </Container>
     </LeadershipSection>
   );
 }
