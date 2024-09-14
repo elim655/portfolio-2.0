@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const SkillsSection = styled.section`
   padding: 4rem 2rem;
-  background: #000;
+  background: #0d0d0d;
   color: #fff;
 `;
 
@@ -29,9 +31,16 @@ const SkillItem = styled.li`
 `;
 
 function Skills() {
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
+
   return (
-    <SkillsSection>
-      <SkillsContent>
+    <SkillsSection id="skills" ref={ref}>
+      <SkillsContent
+      as={motion.div}
+      initial={{ opacity: 0, y: 50 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6 }}
+      >
         <Heading>Skills & Interests</Heading>
         <SkillList>
           <SkillItem>

@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const LeadershipSection = styled.section`
   padding: 4rem 2rem;
@@ -28,9 +30,16 @@ const ActivityItem = styled.li`
 `;
 
 function Leadership() {
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
+
   return (
-    <LeadershipSection>
-      <LeadershipContent>
+    <LeadershipSection ref={ref}>
+      <LeadershipContent
+      as={motion.div}
+      initial={{ opacity: 0, y: 50 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6 }}
+      >
         <Heading>Leadership & Activities</Heading>
         <ActivityList>
           <ActivityItem>

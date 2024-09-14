@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const ExperienceSection = styled.section`
   padding: 4rem 2rem;
-  background: #000;
+  background: #0d0d0d;
   color: #fff;
 `;
 
@@ -33,9 +35,16 @@ const JobDescription = styled.ul`
 `;
 
 function Experience() {
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
+
   return (
-    <ExperienceSection>
-      <ExperienceContent>
+    <ExperienceSection id="experience" ref={ref}>
+      <ExperienceContent 
+      as={motion.div}
+      initial={{ opacity: 0, y: 50 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6 }}
+      >
         <Job>
           <JobTitle>Full Stack Developer</JobTitle>
           <JobDetails>May 2024 – Present | Performance Livestock Analytics, Ames, IA</JobDetails>

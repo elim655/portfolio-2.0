@@ -7,7 +7,7 @@ const ProjectsSection = styled.section`
   background: #0d0d0d;
 `;
 
-const ProjectsGrid = styled.div`
+const ProjectsGrid = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
@@ -64,12 +64,32 @@ function Projects() {
     },
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
+
   return (
     <ProjectsSection>
-      <ProjectsGrid>
+      <ProjectsGrid
+      variants={containerVariants}
+      initial="hidden"
+      animate="show"
+      >
         {projectList.map((project, index) => (
           <ProjectCard
             key={index}
+            variants={cardVariants} 
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
           >
