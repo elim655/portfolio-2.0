@@ -36,7 +36,7 @@ const NavLink = styled(Link)`
 function Navbar() {
   return (
     <Nav>
-      <NavLogo to="/">
+      <NavLogo to="/portfolio-2.0">
         Edmund Lim
       </NavLogo>
       <NavMenu>
