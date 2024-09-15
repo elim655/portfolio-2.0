@@ -115,21 +115,6 @@ function Skills() {
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}
       >
-        <Heading>Languages</Heading>
-        <SkillList>
-          <SkillItem>English</SkillItem>
-          <SkillItem>Mandarin</SkillItem>
-          <SkillItem>Malay</SkillItem>
-          <SkillItem>Cantonese</SkillItem>
-        </SkillList>
-
-        <Heading>Interests</Heading>
-        <SkillList>
-          <SkillItem>Machine Learning</SkillItem>
-          <SkillItem>Full Stack Development</SkillItem>
-          <SkillItem>Embedded Systems</SkillItem>
-          <SkillItem>Data Analysis</SkillItem>
-        </SkillList>
 
         <Heading>Technical Skills</Heading>
         <SkillsGrid>
@@ -154,6 +139,22 @@ function Skills() {
             </Card>
           ))}
         </SkillsGrid>
+
+        <Heading>Languages</Heading>
+        <SkillList>
+          <SkillItem>English</SkillItem>
+          <SkillItem>Mandarin</SkillItem>
+          <SkillItem>Malay</SkillItem>
+          <SkillItem>Cantonese</SkillItem>
+        </SkillList>
+
+        <Heading>Interests</Heading>
+        <SkillList>
+          <SkillItem>Machine Learning</SkillItem>
+          <SkillItem>Full Stack Development</SkillItem>
+          <SkillItem>Embedded Systems</SkillItem>
+          <SkillItem>Data Analysis</SkillItem>
+        </SkillList>
       </SkillsContent>
     </SkillsSection>
   );
