@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Canvas } from '@react-three/fiber';
-import { Sphere } from '@react-three/drei';
-import { motion } from 'framer-motion';
+import { Container, Row, Col } from 'react-bootstrap';
+import edmundlim from '../logos/edmundlim.jpg';
 
 const HomeSection = styled.section`
   height: 100vh;
@@ -22,30 +21,51 @@ const Overlay = styled.div`
   flex-direction: column;
 `;
 
-const Greeting = styled(motion.h1)`
+const Greeting = styled.h1`
   color: #00ffea;
   font-size: 4rem;
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
+`;
+
+const Description = styled.p`
+  font-size: 1.2rem;
+  text-align: center;
+  color: #fff;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+`;
+
+const Image = styled.img`
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  display: block;
+  margin: 0 auto 2rem;
 `;
 
 function Home() {
   return (
     <HomeSection>
-      <Canvas>
-        <ambientLight intensity={0.5} />
-        <directionalLight position={[0, 0, 5]} />
-        <Sphere args={[1, 100, 200]} scale={2}>
-          <meshStandardMaterial attach="material" color="#00ffea" wireframe />
-        </Sphere>
-      </Canvas>
       <Overlay>
-        <Greeting
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
-          Welcome to My Portfolio
-        </Greeting>
+        <Container>
+          <Row className="align-items-center">
+            <Col md={6} className="text-center">
+              <Image src={edmundlim} alt="Edmund Lim" />
+            </Col>
+            <Col md={6}>
+              <Greeting>Hello, my name is Edmund</Greeting>
+              <Description>
+                I'm a Software Engineering student with a passion for Machine Learning and Full Stack Development.
+              </Description>
+            </Col>
+          </Row>
+        </Container>
       </Overlay>
     </HomeSection>
   );
