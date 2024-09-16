@@ -55,8 +55,9 @@ function Experience() {
                 <JobTitle>Full Stack Developer</JobTitle>
                 <JobDetails>May 2024 – Present | Performance Livestock Analytics, Ames, IA</JobDetails>
                 <JobDescription>
-                  <li>Developed customizable dashboards for Performance Beef using PHP, jQuery, and MongoDB.</li>
-                  <li>Designed modals for data visualization, improving user interaction.</li>
+                  <li>Collaborate with a team to develop customizable analytic dashboards for the Performance Beef platform.</li>
+                  <li>Implement frontend and backend features using PHP and jQuery, with MongoDB for database.</li>
+                  <li>Design and manage modals for adding and organizing data visualizations, enhancing user interaction.</li>
                 </JobDescription>
               </Card.Body>
             </Card>
@@ -73,7 +74,9 @@ function Experience() {
                 <JobTitle>Digital Logic Design CPR E 281 – Teaching Assistant</JobTitle>
                 <JobDetails>Aug 2023 – Present | Iowa State University, Ames, IA</JobDetails>
                 <JobDescription>
-                  <li>Conduct weekly labs with FPGA boards and assist in lectures, grading, and office hours.</li>
+                  <li>Conduct weekly labs using FPGA boards and Transistor-Transistor Logic.</li>
+                  <li>Lead recitation sessions that recap lecture material and answer homework questions.</li>
+                  <li>Assist students during weekly office hours and contribute to exam grading and proctoring duties.</li>
                 </JobDescription>
               </Card.Body>
             </Card>
@@ -90,7 +93,9 @@ function Experience() {
                 <JobTitle>Web Developer Intern</JobTitle>
                 <JobDetails>Dec 2021 – Jul 2022 | DNF Cable</JobDetails>
                 <JobDescription>
-                  <li>Maintained websites using HTML, CSS, and JavaScript; implemented responsive design.</li>
+                  <li>Developed and maintained company websites and web applications using HTML, CSS, and JavaScript.</li>
+                  <li>Implemented responsive design techniques for optimal viewing across various devices.</li>
+                  <li>Collaborated with IT to integrate web applications with backend services.</li>
                 </JobDescription>
               </Card.Body>
             </Card>
