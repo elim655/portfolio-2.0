@@ -22,7 +22,7 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 ### `npm run build`
 
 Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance..
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
@@ -68,3 +68,41 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Troubleshooting
+
+### `sh: react-scripts: command not found`
+
+If you encounter the error `sh: react-scripts: command not found`, follow these steps to resolve it:
+
+1. **Install Dependencies**: Ensure all necessary dependencies are installed by running:
+   ```bash
+   npm install
+   ```
+
+2. **Check `package.json`**: Verify that `react-scripts` is listed in your `package.json` under `dependencies`:
+   ```json
+   "dependencies": {
+       "react": "^17.0.2",
+       "react-dom": "^17.0.2",
+       "react-scripts": "4.0.3" // or your version
+   }
+   ```
+
+3. **Reinstall `react-scripts`**: If missing, install it directly:
+   ```bash
+   npm install react-scripts --save
+   ```
+
+4. **Clear Cache**: Clear the npm cache:
+   ```bash
+   npm cache clean --force
+   ```
+
+5. **Delete `node_modules` and Reinstall**: If issues persist, delete the `node_modules` folder and `package-lock.json`, then reinstall:
+   ```bash
+   rm -rf node_modules package-lock.json
+   npm install
+   ```
+
+After following these steps, try running `npm start` again.
